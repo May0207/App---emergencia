@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notificar Emergencia</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <h1>Notificar Emergencia</h1>
+</header>
+<main>
+  <section id="emergencia">
+    <select id="tipoEmergencia">
+      <option value="incendio">Incendio</option>
+      <option value="accidente">Accidente de tráfico</option>
+      <option value="rescate">Rescate</option>
+      <option value="avería">Avería</option>
+    </select>
+    <button onclick="notificarEmergencia()">Enviar Notificación</button>
+    <button id="botonPanico" onclick="activarPanico()">Botón de Pánico</button>
+  </section>
+  <footer>
+    <a href="asistente.html">Asistente de Emergencia</a>
+  </footer>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

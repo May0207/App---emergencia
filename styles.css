@@ -1,0 +1,62 @@
+/* Diseño general */
+body, h1, h2, p, input, select, textarea, button {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #d32f2f;
+    color: white;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+}
+
+.seccion {
+    width: 90%;
+    max-width: 400px;
+    background: white;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+#botonPanico {
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    padding: 1rem;
+    width: 100%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    border-radius: 5px;
+}
+
+button, input, select, textarea {
+    width: 100%;
+    margin: 0.5rem 0;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    body {
+        padding: 0.5rem;
+    }
+}

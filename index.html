@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro - App de Emergencias</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <h1>Registro de Usuario</h1>
+</header>
+<main>
+  <section id="registro">
+    <input type="text" id="nombre" placeholder="Nombre Completo">
+    <input type="tel" id="contacto" placeholder="Teléfono de contacto" pattern="[0-9]{9}" required>
+    <small>Ingrese un número de teléfono válido (solo números, 9 dígitos).</small>
+    <button onclick="registrarUsuario()">Registrarse</button>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
