@@ -4,19 +4,17 @@ let contactoEmergencia = null;
 function registrarUsuario() {
     const nombre = document.getElementById("nombre").value;
     const contacto = document.getElementById("contacto").value;
-
-    const telefonoValido = /^[0-9]{9}$/.test(contacto);  // Verifica que el número tenga 9 dígitos
+    const telefonoValido = /^[0-9]{9}$/.test(contacto);
 
     if (nombre && telefonoValido) {
         usuario = nombre;
         contactoEmergencia = contacto;
         alert(`Usuario ${nombre} registrado con contacto de emergencia ${contacto}`);
-        window.location.href = "emergencia.html";  // Redirige a la página de emergencia
+        window.location.href = "emergencia.html";
     } else {
-        alert("Por favor, completa todos los campos con un nombre válido y un número de teléfono de 9 dígitos.");
+        alert("Por favor, ingresa un nombre y un número de teléfono de 9 dígitos.");
     }
 }
-
 
 function notificarEmergencia() {
     const tipo = document.getElementById("tipoEmergencia").value;
