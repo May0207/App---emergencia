@@ -43,6 +43,31 @@ function verificarAutenticacion() {
     }
 }
 
-// Ejemplo de llamada de verificación para cada página de la aplicación después del inicio de sesión
+// Función para mostrar mensajes de confirmación en el contenedor de la interfaz
+function mostrarMensajeConfirmacion(mensaje) {
+    const mensajeConfirmacion = document.getElementById("mensajeConfirmacion");
+    mensajeConfirmacion.innerText = mensaje;
+    mensajeConfirmacion.style.display = "block"; // Muestra el mensaje
+    setTimeout(() => {
+        mensajeConfirmacion.style.display = "none"; // Oculta el mensaje después de 3 segundos
+    }, 3000);
+}
+
+// Función para notificar emergencia
+function notificarEmergencia() {
+    const tipo = document.getElementById("tipoEmergencia").value;
+    mostrarMensajeConfirmacion(`Emergencia reportada: ${tipo}`);
+}
+
+// Función para activar el botón de pánico
+function activarPanico() {
+    mostrarMensajeConfirmacion("¡Botón de Pánico Activado! Notificando emergencia grave...");
+    const usuarioGuardado = JSON.parse(localStorage.getItem("usuario"));
+    if (usuarioGuardado && usuarioGuardado.contacto) {
+        console.log(`Enviando SMS a contacto de emergencia: ${usuarioGuardado.contacto}`);
+    }
+}
+
+// Verificación de autenticación para cada página de la aplicación después del inicio de sesión
 // (esto se puede incluir en las páginas a las que solo deben acceder usuarios autenticados)
-// verificarAutenticacion();
+verificarAutenticacion();
