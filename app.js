@@ -94,7 +94,7 @@ function evaluarSituacion() {
     if (descripcion.includes("grave") || descripcion.includes("crítico")) {
         mostrarMensajeEvaluacion("Situación crítica, activando recursos prioritarios.");
     } else {
-        mostrarMensajeEvaluacion("Situación evaluada como moderada.");
+        mostrarMensajeEvaluacion("Situación enviada.");
     }
 }
 
