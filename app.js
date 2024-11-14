@@ -53,20 +53,51 @@ function mostrarMensajeConfirmacion(mensaje) {
     }, 3000);
 }
 
-// Función para notificar emergencia
+// Función para notificar una emergencia
 function notificarEmergencia() {
     const tipo = document.getElementById("tipoEmergencia").value;
-    mostrarMensajeConfirmacion(`Emergencia reportada: ${tipo}`);
+    alert(`Emergencia reportada: ${tipo}`);
+
+    // Mostrar un mensaje en la página de confirmación
+    const mensaje = document.createElement('div');
+    mensaje.textContent = "Notificación enviada correctamente.";
+    mensaje.style.color = '#388e3c';  // Color verde
+    mensaje.style.fontWeight = 'bold';
+    document.body.appendChild(mensaje);  // Muestra el mensaje en el cuerpo del documento
 }
 
 // Función para activar el botón de pánico
 function activarPanico() {
-    mostrarMensajeConfirmacion("¡Botón de Pánico Activado! Notificando emergencia grave...");
-    const usuarioGuardado = JSON.parse(localStorage.getItem("usuario"));
-    if (usuarioGuardado && usuarioGuardado.contacto) {
-        console.log(`Enviando SMS a contacto de emergencia: ${usuarioGuardado.contacto}`);
+    alert("¡Botón de Pánico Activado! Notificando emergencia grave...");
+
+    // Mostrar un mensaje de confirmación
+    const mensaje = document.createElement('div');
+    mensaje.textContent = "Emergencia grave reportada. Notificación enviada.";
+    mensaje.style.color = '#d32f2f';  // Color rojo para emergencias graves
+    mensaje.style.fontWeight = 'bold';
+    document.body.appendChild(mensaje);  // Muestra el mensaje en el cuerpo del documento
+}
+
+// Función para mostrar mensajes de confirmación en el contenedor de evaluación
+function mostrarMensajeEvaluacion(mensaje) {
+    const mensajeEvaluacion = document.getElementById("mensajeEvaluacion");
+    mensajeEvaluacion.innerText = mensaje;
+    mensajeEvaluacion.style.display = "block"; // Muestra el mensaje
+    setTimeout(() => {
+        mensajeEvaluacion.style.display = "none"; // Oculta el mensaje después de 3 segundos
+    }, 3000);
+}
+
+// Función para evaluar la situación de emergencia
+function evaluarSituacion() {
+    const descripcion = document.getElementById("descripcion").value;
+    if (descripcion.includes("grave") || descripcion.includes("crítico")) {
+        mostrarMensajeEvaluacion("Situación crítica, activando recursos prioritarios.");
+    } else {
+        mostrarMensajeEvaluacion("Situación evaluada como moderada.");
     }
 }
+
 
 // Verificación de autenticación para cada página de la aplicación después del inicio de sesión
 // (esto se puede incluir en las páginas a las que solo deben acceder usuarios autenticados)
