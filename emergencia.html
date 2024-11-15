@@ -14,12 +14,41 @@
 <main>
   <section id="emergencia">
     <h2>Seleccione el tipo de emergencia</h2>
-    <select id="tipoEmergencia">
+    <select id="tipoEmergencia" onchange="mostrarCamposAdicionales()">
       <option value="incendio">Incendio</option>
       <option value="accidente">Accidente de tráfico</option>
       <option value="rescate">Rescate</option>
-      <option value="avería">Avería</option>
+      <option value="averia">Avería</option>
     </select>
+
+    <div id="camposIncendio" style="display:none;">
+      <label for="ubicacionIncendio">¿Dónde ocurrió el incendio?</label>
+      <input type="text" id="ubicacionIncendio" placeholder="Ejemplo: Río X, zona Y">
+    </div>
+
+    <!-- Campos adicionales -->
+    <div id="camposAccidente" style="display:none;">
+      <label for="ubicacionAccidente">¿En qué parte ocurrió el accidente?</label>
+      <input type="text" id="ubicacionAccidente" placeholder="Ejemplo: Calle X, esquina Y">
+
+      <label for="gravedadAccidente">¿Qué tan grave es el accidente?</label>
+      <select id="gravedadAccidente">
+        <option value="leve">Leve</option>
+        <option value="moderado">Moderado</option>
+        <option value="grave">Grave</option>
+      </select>
+    </div>
+
+    <div id="camposRescate" style="display:none;">
+      <label for="ubicacionRescate">¿Dónde ocurrió el rescate?</label>
+      <input type="text" id="ubicacionRescate" placeholder="Ejemplo: Río X, zona Y">
+    </div>
+
+    <div id="camposAveria" style="display:none;">
+      <label for="ubicacionAveria">¿Dónde ocurrió la avería?</label>
+      <input type="text" id="ubicacionAveria" placeholder="Ejemplo: Autopista Z, kilómetro 10">
+    </div>
+
     <button onclick="notificarEmergencia()">Enviar Notificación</button>
     <button id="botonPanico" onclick="activarPanico()">Botón de Pánico</button>
   </section>
@@ -27,6 +56,42 @@
     <a href="asistente.html">Ir al Asistente de Emergencia</a>
   </footer>
 </main>
-<script src="app.js"></script>
+<script>
+  // Función para mostrar los campos adicionales según el tipo de emergencia seleccionado
+  function mostrarCamposAdicionales() {
+    const tipo = document.getElementById("tipoEmergencia").value;
+
+    // Ocultar todos los campos adicionales
+    document.getElementById("camposIncendio").style.display = "none";
+    document.getElementById("camposAccidente").style.display = "none";
+    document.getElementById("camposRescate").style.display = "none";
+    document.getElementById("camposAveria").style.display = "none";
+
+    // Mostrar los campos correspondientes al tipo seleccionado
+    if (tipo === "incendio") {
+      document.getElementById("camposIncendio").style.display = "block";
+    } else if (tipo === "accidente") {
+      document.getElementById("camposAccidente").style.display = "block";
+    } else if (tipo === "rescate") {
+      document.getElementById("camposRescate").style.display = "block";
+    } else if (tipo === "averia") {
+      document.getElementById("camposAveria").style.display = "block";
+    }
+  }
+
+  // Llamar a mostrarCamposAdicionales() al cargar la página
+  document.addEventListener("DOMContentLoaded", () => {
+    mostrarCamposAdicionales();
+  });
+
+  function notificarEmergencia() {
+    const tipo = document.getElementById("tipoEmergencia").value;
+    alert(`Emergencia reportada: ${tipo}`);
+  }
+
+  function activarPanico() {
+    alert("¡Botón de Pánico Activado! Notificando emergencia grave...");
+  }
+</script>
 </body>
 </html>

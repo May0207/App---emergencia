@@ -14,6 +14,7 @@
 <main>
   <section id="registro">
     <h2>Crear una Cuenta</h2>
+
     <label for="nombre">Nombre</label>
     <input type="text" id="nombre" placeholder="Tu Nombre" required>
 
@@ -26,11 +27,16 @@
     <label for="password">Contraseña</label>
     <input type="password" id="password" placeholder="Contraseña" required>
 
-    <label for="contacto">Teléfono de Contacto de Emergencia</label>
-    <input type="tel" id="contacto" placeholder="Número de teléfono" pattern="[0-9]{9}" required>
+    <!-- Contactos de emergencia -->
+    <label for="contacto1">Teléfono de Contacto de Emergencia 1</label>
+    <input type="tel" id="contacto1" placeholder="Número de teléfono" pattern="[0-9]{9}" required>
     <small>Ingresa solo números (9 dígitos).</small>
 
-    <button onclick="registrarUsuario()">Registrarse</button>
+    <label for="contacto2">Teléfono de Contacto de Emergencia 2</label>
+    <input type="tel" id="contacto2" placeholder="Número de teléfono" pattern="[0-9]{9}" required>
+    <small>Ingresa solo números (9 dígitos).</small>
+
+    <button type="button" onclick="registrarUsuario()">Registrarse</button>
     <p>¿Ya tienes una cuenta? <a href="login.html">Iniciar sesión</a></p>
   </section>
 </main>
