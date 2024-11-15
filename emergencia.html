@@ -24,6 +24,13 @@
     <div id="camposIncendio" style="display:none;">
       <label for="ubicacionIncendio">¿Dónde ocurrió el incendio?</label>
       <input type="text" id="ubicacionIncendio" placeholder="Ejemplo: Río X, zona Y">
+
+      <label for="gravedadIncendio">¿Como de grave es el incendio?</label>
+      <select id="gravedadIncendio">
+        <option value="leve">Leve</option>
+        <option value="moderado">Moderado</option>
+        <option value="grave">Grave</option>
+      </select>
     </div>
 
     <!-- Campos adicionales -->
@@ -31,7 +38,7 @@
       <label for="ubicacionAccidente">¿En qué parte ocurrió el accidente?</label>
       <input type="text" id="ubicacionAccidente" placeholder="Ejemplo: Calle X, esquina Y">
 
-      <label for="gravedadAccidente">¿Qué tan grave es el accidente?</label>
+      <label for="gravedadAccidente">¿Como de grave es el accidente?</label>
       <select id="gravedadAccidente">
         <option value="leve">Leve</option>
         <option value="moderado">Moderado</option>
@@ -42,11 +49,25 @@
     <div id="camposRescate" style="display:none;">
       <label for="ubicacionRescate">¿Dónde ocurrió el rescate?</label>
       <input type="text" id="ubicacionRescate" placeholder="Ejemplo: Río X, zona Y">
+
+      <label for="gravedadRescate">¿Como de grave es el rescate?</label>
+      <select id="gravedadRescate">
+        <option value="leve">Leve</option>
+        <option value="moderado">Moderado</option>
+        <option value="grave">Grave</option>
+      </select>
     </div>
 
     <div id="camposAveria" style="display:none;">
       <label for="ubicacionAveria">¿Dónde ocurrió la avería?</label>
       <input type="text" id="ubicacionAveria" placeholder="Ejemplo: Autopista Z, kilómetro 10">
+
+      <label for="gravedadAveria">¿Como de grave es la averia?</label>
+      <select id="gravedadAveria">
+        <option value="leve">Leve</option>
+        <option value="moderado">Moderado</option>
+        <option value="grave">Grave</option>
+      </select>
     </div>
 
     <button onclick="notificarEmergencia()">Enviar Notificación</button>
