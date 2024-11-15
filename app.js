@@ -43,21 +43,21 @@ function verificarAutenticacion() {
     }
 }
 
-// Función para recuperación de contraseña
 function recuperarPassword(event) {
     event.preventDefault();
 
     const emailRecuperar = document.getElementById("emailRecuperar").value.trim();
     const usuarioGuardado = JSON.parse(localStorage.getItem("usuario"));
 
+    // Verificar si el correo es válido y está registrado
     if (!usuarioGuardado || usuarioGuardado.email !== emailRecuperar) {
-        mostrarMensaje("El correo ingresado no está registrado.", "error");
+        alert("El correo ingresado no está registrado. Por favor, verifica e intenta nuevamente.");
         return;
     }
 
     // Si el correo es válido, redirige a la página de cambio de contraseña
     alert("Correo verificado. Ahora puedes cambiar tu contraseña.");
-    window.location.href = "cambio de contraseña.html"; // Asegúrate de que esta página exista en tu proyecto
+    window.location.href = "cambio de contraseña.html"; // Asegúrate de que esta página exista
 }
 
 
